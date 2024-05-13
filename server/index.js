@@ -23,6 +23,7 @@ const { workspaceThreadEndpoints } = require("./endpoints/workspaceThreads");
 const { documentEndpoints } = require("./endpoints/document");
 const { agentWebsocket } = require("./endpoints/agentWebsocket");
 const app = express();
+app.set('trust proxy', true);
 const apiRouter = express.Router();
 const FILE_LIMIT = "3GB";
 

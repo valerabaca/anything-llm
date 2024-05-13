@@ -1,5 +1,6 @@
 {
   "name": "anything-llm-frontend",
+  "homepage": "https://staging-adalab.adamatics.io/apps/anything-llm",
   "private": false,
   "license": "MIT",
   "type": "module",

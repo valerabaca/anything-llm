@@ -2,35 +2,35 @@ import { API_BASE } from "./constants";
 
 export default {
   home: () => {
-    return "/";
+    return "/apps/anything-llm/";
   },
   login: (noTry = false) => {
-    return `/login${noTry ? "?nt=1" : ""}`;
+    return `/apps/anything-llm/login${noTry ? "?nt=1" : ""}`;
   },
   onboarding: {
     home: () => {
-      return "/onboarding";
+      return "/apps/anything-llm/onboarding";
     },
     survey: () => {
-      return "/onboarding/survey";
+      return "/apps/anything-llm/onboarding/survey";
     },
     llmPreference: () => {
-      return "/onboarding/llm-preference";
+      return "/apps/anything-llm/onboarding/llm-preference";
     },
     embeddingPreference: () => {
-      return "/onboarding/embedding-preference";
+      return "/apps/anything-llm/onboarding/embedding-preference";
     },
     vectorDatabase: () => {
-      return "/onboarding/vector-database";
+      return "/apps/anything-llm/onboarding/vector-database";
     },
     userSetup: () => {
-      return "/onboarding/user-setup";
+      return "/apps/anything-llm/onboarding/user-setup";
     },
     dataHandling: () => {
-      return "/onboarding/data-handling";
+      return "/apps/anything-llm/onboarding/data-handling";
     },
     createWorkspace: () => {
-      return "/onboarding/create-workspace";
+      return "/apps/anything-llm/onboarding/create-workspace";
     },
   },
   github: () => {
@@ -50,27 +50,27 @@ export default {
   },
   workspace: {
     chat: (slug) => {
-      return `/workspace/${slug}`;
+      return `/apps/anything-llm/workspace/${slug}`;
     },
     settings: {
       generalAppearance: (slug) => {
-        return `/workspace/${slug}/settings/general-appearance`;
+        return `/apps/anything-llm/workspace/${slug}/settings/general-appearance`;
       },
       chatSettings: (slug) => {
-        return `/workspace/${slug}/settings/chat-settings`;
+        return `/apps/anything-llm/workspace/${slug}/settings/chat-settings`;
       },
       vectorDatabase: (slug) => {
-        return `/workspace/${slug}/settings/vector-database`;
+        return `/apps/anything-llm/workspace/${slug}/settings/vector-database`;
       },
       members: (slug) => {
-        return `/workspace/${slug}/settings/members`;
+        return `/apps/anything-llm/workspace/${slug}/settings/members`;
       },
       agentConfig: (slug) => {
-        return `/workspace/${slug}/settings/agent-config`;
+        return `/apps/anything-llm/workspace/${slug}/settings/agent-config`;
       },
     },
     thread: (wsSlug, threadSlug) => {
-      return `/workspace/${wsSlug}/t/${threadSlug}`;
+      return `/apps/anything-llm/workspace/${wsSlug}/t/${threadSlug}`;
     },
   },
   apiDocs: () => {
@@ -78,56 +78,56 @@ export default {
   },
   settings: {
     system: () => {
-      return `/settings/system-preferences`;
+      return `/apps/anything-llm/settings/system-preferences`;
     },
     users: () => {
-      return `/settings/users`;
+      return `/apps/anything-llm/settings/users`;
     },
     invites: () => {
-      return `/settings/invites`;
+      return `/apps/anything-llm/settings/invites`;
     },
     workspaces: () => {
-      return `/settings/workspaces`;
+      return `/apps/anything-llm/settings/workspaces`;
     },
     chats: () => {
-      return "/settings/workspace-chats";
+      return "/apps/anything-llm/settings/workspace-chats";
     },
     llmPreference: () => {
-      return "/settings/llm-preference";
+      return "/apps/anything-llm/settings/llm-preference";
     },
     transcriptionPreference: () => {
-      return "/settings/transcription-preference";
+      return "/apps/anything-llm/settings/transcription-preference";
     },
     embedder: {
-      modelPreference: () => "/settings/embedding-preference",
-      chunkingPreference: () => "/settings/text-splitter-preference",
+      modelPreference: () => "/apps/anything-llm/settings/embedding-preference",
+      chunkingPreference: () => "/apps/anything-llm/settings/text-splitter-preference",
     },
     embeddingPreference: () => {
-      return "/settings/embedding-preference";
+      return "/apps/anything-llm/settings/embedding-preference";
     },
     vectorDatabase: () => {
-      return "/settings/vector-database";
+      return "/apps/anything-llm/settings/vector-database";
     },
     security: () => {
-      return "/settings/security";
+      return "/apps/anything-llm/settings/security";
     },
     appearance: () => {
-      return "/settings/appearance";
+      return "/apps/anything-llm/settings/appearance";
     },
     apiKeys: () => {
-      return "/settings/api-keys";
+      return "/apps/anything-llm/settings/api-keys";
     },
     logs: () => {
-      return "/settings/event-logs";
+      return "/apps/anything-llm/settings/event-logs";
     },
     privacy: () => {
-      return "/settings/privacy";
+      return "/apps/anything-llm/settings/privacy";
     },
     embedSetup: () => {
-      return `/settings/embed-config`;
+      return `/apps/anything-llm/settings/embed-config`;
     },
     embedChats: () => {
-      return `/settings/embed-chats`;
+      return `/apps/anything-llm/settings/embed-chats`;
     },
   },
 };

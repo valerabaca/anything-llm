@@ -58,99 +58,99 @@ export default function App() {
         <LogoProvider>
           <PfpProvider>
             <Routes>
-              <Route path="/" element={<PrivateRoute Component={Main} />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="/apps/anything-llm/" element={<PrivateRoute Component={Main} />} />
+              <Route path="/apps/anything-llm/login" element={<Login />} />
               <Route
-                path="/workspace/:slug/settings/:tab"
+                path="/apps/anything-llm/workspace/:slug/settings/:tab"
                 element={<ManagerRoute Component={WorkspaceSettings} />}
               />
               <Route
-                path="/workspace/:slug"
+                path="/apps/anything-llm/workspace/:slug"
                 element={<PrivateRoute Component={WorkspaceChat} />}
               />
               <Route
-                path="/workspace/:slug/t/:threadSlug"
+                path="/apps/anything-llm/workspace/:slug/t/:threadSlug"
                 element={<PrivateRoute Component={WorkspaceChat} />}
               />
-              <Route path="/accept-invite/:code" element={<InvitePage />} />
+              <Route path="/apps/anything-llm/accept-invite/:code" element={<InvitePage />} />
 
               {/* Admin */}
               <Route
-                path="/settings/llm-preference"
+                path="/apps/anything-llm/settings/llm-preference"
                 element={<AdminRoute Component={GeneralLLMPreference} />}
               />
               <Route
-                path="/settings/transcription-preference"
+                path="/apps/anything-llm/settings/transcription-preference"
                 element={
                   <AdminRoute Component={GeneralTranscriptionPreference} />
                 }
               />
               <Route
-                path="/settings/embedding-preference"
+                path="/apps/anything-llm/settings/embedding-preference"
                 element={<AdminRoute Component={GeneralEmbeddingPreference} />}
               />
               <Route
-                path="/settings/text-splitter-preference"
+                path="/apps/anything-llm/settings/text-splitter-preference"
                 element={
                   <AdminRoute Component={EmbeddingTextSplitterPreference} />
                 }
               />
               <Route
-                path="/settings/vector-database"
+                path="/apps/anything-llm/settings/vector-database"
                 element={<AdminRoute Component={GeneralVectorDatabase} />}
               />
               <Route
-                path="/settings/event-logs"
+                path="/apps/anything-llm/settings/event-logs"
                 element={<AdminRoute Component={AdminLogs} />}
               />
               <Route
-                path="/settings/embed-config"
+                path="/apps/anything-llm/settings/embed-config"
                 element={<AdminRoute Component={EmbedConfigSetup} />}
               />
               <Route
-                path="/settings/embed-chats"
+                path="/apps/anything-llm/settings/embed-chats"
                 element={<AdminRoute Component={EmbedChats} />}
               />
               {/* Manager */}
               <Route
-                path="/settings/security"
+                path="/apps/anything-llm/settings/security"
                 element={<ManagerRoute Component={GeneralSecurity} />}
               />
               <Route
-                path="/settings/privacy"
+                path="/apps/anything-llm/settings/privacy"
                 element={<AdminRoute Component={PrivacyAndData} />}
               />
               <Route
-                path="/settings/appearance"
+                path="/apps/anything-llm/settings/appearance"
                 element={<ManagerRoute Component={GeneralAppearance} />}
               />
               <Route
-                path="/settings/api-keys"
+                path="/apps/anything-llm/settings/api-keys"
                 element={<AdminRoute Component={GeneralApiKeys} />}
               />
               <Route
-                path="/settings/workspace-chats"
+                path="/apps/anything-llm/settings/workspace-chats"
                 element={<ManagerRoute Component={GeneralChats} />}
               />
               <Route
-                path="/settings/system-preferences"
+                path="/apps/anything-llm/settings/system-preferences"
                 element={<ManagerRoute Component={AdminSystem} />}
               />
               <Route
-                path="/settings/invites"
+                path="/apps/anything-llm/settings/invites"
                 element={<ManagerRoute Component={AdminInvites} />}
               />
               <Route
-                path="/settings/users"
+                path="/apps/anything-llm/settings/users"
                 element={<ManagerRoute Component={AdminUsers} />}
               />
               <Route
-                path="/settings/workspaces"
+                path="/apps/anything-llm/settings/workspaces"
                 element={<ManagerRoute Component={AdminWorkspaces} />}
               />
               {/* Onboarding Flow */}
-              <Route path="/onboarding" element={<OnboardingFlow />} />
-              <Route path="/onboarding/:step" element={<OnboardingFlow />} />
+              <Route path="/apps/anything-llm/onboarding" element={<OnboardingFlow />} />
+              <Route path="/apps/anything-llm/onboarding/:step" element={<OnboardingFlow />} />
             </Routes>
             <ToastContainer />
           </PfpProvider>

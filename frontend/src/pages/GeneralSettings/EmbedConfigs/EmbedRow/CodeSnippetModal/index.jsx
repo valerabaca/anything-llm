@@ -61,11 +61,11 @@ https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
 const ScriptTag = ({ embed }) => {
   const [copied, setCopied] = useState(false);
   const scriptHost = import.meta.env.DEV
-    ? "http://localhost:3000"
-    : window.location.origin;
+    ? "http://localhost:3000/apps/anything-llm"
+    : window.location.origin + "/apps/anything-llm";
   const serverHost = import.meta.env.DEV
-    ? "http://localhost:3001"
-    : window.location.origin;
+    ? "http://localhost:3001/apps/anything-llm"
+    : window.location.origin + "/apps/anything-llm";
   const snippet = createScriptTagSnippet(embed, scriptHost, serverHost);
 
   const handleClick = () => {

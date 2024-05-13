@@ -159,3 +159,31 @@ If you are getting errors like `llama:streaming - could not stream chat. Error: 
 ### Still not working?
 
 [Ask for help on Discord](https://discord.gg/6UyHPeGZAC)
+
+## Running AnythingLLM in AdaLab
+
+- `git clone` this repo and `cd anything-llm` to get to the root directory.
+- `touch server/storage/anythingllm.db` to create empty SQLite DB file.
+- `cd frontend`
+- `cp .env.example .env.production`
+- Edit the variables `VITE_API_BASE`, `APP_URL` in `.env.production`. For example, if running in **staging** and `app_url` is _anything-llm_,
+  * VITE_API_BASE="https://staging-adalab.adamatics.io/apps/anything-llm/api"
+  * APP_URL="/apps/anything-llm"
+- Edit the entry `homepage` in the `package.json` file inside the `frontend`directory. Assuming the the same scenario as above, the entry should be
+  * "homepage": "https://staging-adalab.adamatics.io/apps/anything-llm",
+- `cd ../docker/`
+- `cp .env.example .env` **you must do this before building**
+- `cd ..`
+- `export IMAGETAG=anything-llm:X.Y.Z` (see the correct label and version for the image)
+- `docker build -f ./docker/Dockerfile -t harbor.staging-adalab.adamatics.io/apps_temp/$IMAGETAG --build-arg ARG_UID=1000 --build-arg ARG_GID=1000 .`
+- `docker push harbor.staging-adalab.adamatics.io/apps_temp/$IMAGETAG`
+- Go to the `Container Images` tab in `AdaLab` and publish the new image from **registry**
+- Go to `App Deployment` and deploy the app with the following options:
+  * Access Control: Public (non public has not been tested yet but I suspect it may cause issues for the chatbot widget)
+  * Min/Max CPU cores: 2
+  * Min/max RAM (MB): 2000
+  * Strip Prefix: checked
+  * Port number: 3001
+  * Environment variables:
+    * ARG_UID = 1000
+    * ARG_GID = 1000

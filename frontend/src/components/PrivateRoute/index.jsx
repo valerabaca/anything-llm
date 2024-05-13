@@ -128,7 +128,7 @@ export default function PrivateRoute({ Component }) {
   if (isAuthd === null) return <FullScreenLoader />;
 
   if (shouldRedirectToOnboarding) {
-    return <Navigate to="/onboarding" />;
+    return <Navigate to="/apps/anything-llm/onboarding" />;
   }
 
   return isAuthd ? (
